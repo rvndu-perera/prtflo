@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aelixa — Digital Marketing Strategist Portfolio</title>
+<meta name="description" content="Aelixa — digital marketing strategist portfolio. SEO, paid campaigns, content strategy and data-driven growth systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#faf6ee;
+    --cream-2:#f3efe4;
+    --ink:#171614;
+    --ink-2:#232019;
+    --gray:#8c8880;
+    --gray-light:#c9c5ba;
+    --line:#e6e1d4;
+    --gold:#f0b429;
+    --gold-dark:#d99e1c;
+    --white:#ffffff;
+    --radius-lg:22px;
+    --radius-md:14px;
+    --radius-sm:8px;
+    --shadow-soft:0 20px 45px -25px rgba(23,22,20,0.35);
+    --maxw:1240px;
+    font-size:16px;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{
+    font-family:'Poppins',-apple-system,sans-serif;
+    margin:0;
+    line-height:1.08;
+    letter-spacing:-0.02em;
+  }
+  p{margin:0;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;margin:0;padding:0;}
+  button{font-family:inherit;cursor:pointer;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+  section{position:relative;}
+
+  ::selection{background:var(--gold);color:var(--ink);}
+
+  /* ---------- Utility ---------- */
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ink);
+  }
+  .eyebrow .arrow-badge{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:18px;height:18px;border-radius:5px;background:var(--gold);
+    color:var(--ink);flex:none;
+  }
+  .eyebrow .arrow-badge svg{width:10px;height:10px;}
+  .eyebrow.on-dark{color:var(--white);}
+
+  .muted{color:var(--gray);}
+  .gray-text{color:var(--gray-light);}
+
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:14px 24px;border-radius:999px;
+    font-size:14.5px;font-weight:600;
+    border:1px solid transparent;
+    white-space:nowrap;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
+  }
+  .btn svg{width:13px;height:13px;transition:transform .25s ease;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn:hover svg{transform:translate(2px,-2px);}
+  .btn-gold{background:var(--gold);color:var(--ink);}
+  .btn-gold:hover{box-shadow:0 14px 30px -12px rgba(240,180,41,0.65);background:var(--gold-dark);}
+  .btn-dark{background:var(--ink);color:var(--white);}
+  .btn-dark:hover{box-shadow:0 14px 30px -12px rgba(23,22,20,0.5);}
+  .btn-outline-dark{border-color:rgba(255,255,255,0.22);color:var(--white);}
+  .btn-outline-dark:hover{background:rgba(255,255,255,0.08);}
+  .btn-outline-light{border-color:var(--line);color:var(--ink);}
+  .btn-outline-light:hover{background:var(--ink);color:var(--white);border-color:var(--ink);}
+  .btn-block{width:100%;justify-content:center;}
+
+  .section-pad{padding:112px 0;}
+  @media(max-width:900px){.section-pad{padding:76px 0;}}
+
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.16,.8,.24,1), transform .8s cubic-bezier(.16,.8,.24,1);}
+  .reveal.in{opacity:1;transform:translateY(0);}
+  .reveal-delay-1{transition-delay:.08s;}
+  .reveal-delay-2{transition-delay:.16s;}
+  .reveal-delay-3{transition-delay:.24s;}
+
+  /* ---------- Navbar ---------- */
+  .navbar{
+    position:sticky;top:0;z-index:200;
+    background:var(--ink);
+    border-bottom:1px solid rgba(255,255,255,0.06);
+  }
+  .navbar .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    height:78px;
+  }
+  .logo{
+    font-family:'Poppins',sans-serif;
+    font-size:22px;font-weight:700;color:var(--white);letter-spacing:-0.01em;
+  }
+  .nav-links{
+    display:flex;align-items:center;gap:38px;
+  }
+  .nav-links a{
+    font-size:14.5px;font-weight:500;color:rgba(255,255,255,0.82);
+    display:flex;align-items:center;gap:5px;
+    position:relative;
+    transition:color .2s ease;
+  }
+  .nav-links a:hover{color:var(--white);}
+  .nav-links a.has-caret svg{width:9px;height:9px;opacity:.7;margin-top:1px;}
+  .nav-right{display:flex;align-items:center;gap:22px;}
+  .cart-icon{
+    display:flex;align-items:center;gap:7px;color:var(--white);font-size:14px;font-weight:500;
+  }
+  .cart-icon svg{width:19px;height:19px;}
+  .nav-toggle{
+    display:none;background:none;border:none;color:var(--white);padding:6px;
+  }
+  .nav-toggle svg{width:24px;height:24px;}
+
+  @media(max-width:980px){
+    .nav-links{
+      position:fixed;inset:78px 0 0 0;
+      background:var(--ink);
+      flex-direction:column;
+      align-items:flex-start;
+      gap:0;
+      padding:12px 32px 32px;
+      transform:translateY(-12px);
+      opacity:0;pointer-events:none;
+      transition:opacity .25s ease, transform .25s ease;
+      overflow-y:auto;
+    }
+    .nav-links.open{opacity:1;pointer-events:auto;transform:translateY(0);}
+    .nav-links a{width:100%;padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.08);}
+    .nav-toggle{display:flex;}
+    .nav-right .btn-gold-label{display:none;}
+  }
+  @media(max-width:560px){
+    .navbar .wrap{padding:0 20px;}
+    .cart-icon span{display:none;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{padding:96px 0 64px;text-align:center;}
+  .hero .eyebrow{margin-bottom:26px;}
+  .hero-center{max-width:900px;margin:0 auto;}
+  .hero h1{
+    font-size:clamp(38px,6.4vw,64px);
+    font-weight:700;
+  }
+  .hero h1 .badge-icon{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:.86em;height:.86em;border-radius:.2em;background:var(--gold);
+    margin:0 .06em;vertical-align:-0.12em;
+  }
+  .hero h1 .badge-icon svg{width:52%;height:52%;color:var(--ink);}
+  .hero h1 .fade{color:var(--gray-light);}
+  .hero-sub{
+    max-width:560px;margin:26px auto 0;
+    font-size:16.5px;line-height:1.7;color:var(--gray);
+  }
+  .hero-cta{margin-top:38px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+
+  /* ---------- About / strategy split ---------- */
+  .about-split{
+    display:grid;grid-template-columns:1fr 1fr;gap:24px;
+    margin-top:56px;
+  }
+  .about-card{
+    background:var(--ink);border-radius:var(--radius-lg);
+    padding:40px 40px 0;color:var(--white);
+    display:flex;flex-direction:column;
+    min-height:560px;
+  }
+  .about-card .eyebrow{margin-bottom:26px;}
+  .about-card h2{font-size:clamp(28px,3vw,38px);font-weight:700;}
+  .about-card h2 .fade{color:#5f5c55;display:block;}
+  .about-card p.desc{
+    margin-top:20px;max-width:420px;
+    font-size:15px;line-height:1.75;color:#b9b6ad;
+  }
+  .about-card .card-btns{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;}
+
+  .mini-result{
+    margin-top:auto;
+    background:rgba(255,255,255,0.045);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:16px;
+    margin-bottom:24px;
+    padding:16px;
+    display:flex;align-items:center;gap:16px;
+  }
+  .mini-result .thumb{
+    width:64px;height:64px;border-radius:12px;flex:none;
+    background:linear-gradient(140deg,#f3c9d6,#f6dfe6 60%,#eecdd8);
+    background-size:cover;background-position:center;
+  }
+  .mini-result .body h4{font-size:15.5px;font-weight:600;line-height:1.35;color:var(--white);}
+  .mini-result .body a{
+    display:inline-flex;align-items:center;gap:6px;margin-top:8px;
+    font-size:13px;font-weight:600;color:var(--gold);
+  }
+  .mini-result .body a svg{width:10px;height:10px;}
+
+  .photo-card{
+    position:relative;border-radius:var(--radius-lg);overflow:hidden;
+    min-height:560px;background:#d9d4c8;
+  }
+  .photo-card img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+  .stat-row{
+    position:absolute;left:20px;right:20px;bottom:20px;
+    display:flex;gap:14px;
+  }
+  .stat-chip{
+    flex:1;background:var(--white);border-radius:14px;padding:18px 18px;
+    box-shadow:var(--shadow-soft);
+  }
+  .stat-chip .num{
+    font-family:'Poppins',sans-serif;font-size:26px;font-weight:700;color:var(--ink);
+    display:flex;align-items:baseline;gap:2px;
+  }
+  .stat-chip .num .unit{font-size:15px;color:var(--gold-dark);font-weight:700;}
+  .stat-chip .cap{font-size:12.5px;color:var(--gray);margin-top:6px;line-height:1.4;}
+  .stat-chip .delta{
+    margin-top:12px;padding-top:12px;border-top:1px solid var(--line);
+    font-size:11.5px;font-weight:600;color:#2f8f5b;display:flex;align-items:center;gap:5px;
+  }
+  .stat-chip .delta svg{width:10px;height:10px;}
+
+  @media(max-width:900px){
+    .about-split{grid-template-columns:1fr;}
+    .photo-card{min-height:420px;}
+    .about-card{min-height:auto;padding:32px 24px 0;}
+  }
+  @media(max-width:560px){
+    .stat-row{position:static;margin-top:14px;flex-direction:column;}
+    .photo-card{min-height:340px;}
+  }
+
+  /* ---------- Client logos ---------- */
+  .clients{padding:64px 0;border-bottom:1px solid var(--line);}
+  .client-row{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:24px;flex-wrap:wrap;opacity:.85;
+  }
+  .client-logo{
+    display:flex;align-items:center;gap:9px;
+    font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;color:#5b584f;
+    filter:grayscale(1);opacity:.65;transition:opacity .25s ease, filter .25s ease;
+  }
+  .client-logo:hover{opacity:1;filter:grayscale(0);}
+  .client-logo svg{width:20px;height:20px;flex:none;}
+
+  /* ---------- Philosophy ---------- */
+  .center-head{max-width:640px;margin:0 auto;text-align:center;}
+  .center-head .eyebrow{justify-content:center;}
+  .center-head h2{font-size:clamp(30px,4.2vw,44px);font-weight:700;margin-top:18px;}
+  .center-head h2 .fade{color:var(--gray-light);}
+  .center-head .sub{margin-top:20px;font-size:16px;line-height:1.75;color:var(--gray);}
+
+  .phil-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+    margin-top:56px;
+  }
+  .phil-card{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius-lg);
+    padding:34px 30px 30px;transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+  }
+  .phil-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-soft);border-color:transparent;}
+  .phil-card h3{font-size:19px;font-weight:600;margin-bottom:26px;}
+  .phil-icon{
+    width:92px;height:92px;border-radius:50%;background:var(--cream-2);
+    display:flex;align-items:center;justify-content:center;margin-bottom:26px;
+  }
+  .phil-icon svg{width:34px;height:34px;color:#77746b;}
+  .phil-card p{font-size:14.5px;line-height:1.7;color:var(--gray);}
+
+  @media(max-width:900px){.phil-grid{grid-template-columns:1fr;}}
+
+  /* ---------- Expertise ---------- */
+  .expertise-top{
+    display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end;
+  }
+  .expertise-top h2{font-size:clamp(30px,4.4vw,46px);font-weight:700;}
+  .expertise-top h2 .fade{color:var(--gray-light);display:block;}
+  .expertise-top .para{font-size:16px;line-height:1.75;color:var(--gray);}
+  @media(max-width:800px){.expertise-top{grid-template-columns:1fr;}}
+
+  .exp-tabs{
+    margin-top:56px;background:var(--ink);border-radius:var(--radius-lg);
+    overflow:hidden;
+  }
+  .exp-tab{border-bottom:1px solid rgba(255,255,255,0.08);}
+  .exp-tab:last-child{border-bottom:none;}
+  .exp-tab-head{
+    display:flex;align-items:center;justify-content:space-between;
+    width:100%;background:none;border:none;color:var(--white);
+    padding:30px 40px;text-align:left;gap:24px;
+  }
+  .exp-tab-head .idx{font-size:14px;color:var(--gray-light);font-weight:600;letter-spacing:.05em;flex:none;width:130px;}
+  .exp-tab-head .title{
+    font-family:'Poppins',sans-serif;font-weight:700;
+    font-size:clamp(22px,3vw,34px);flex:1;
+    transition:color .25s ease;color:#615e56;
+  }
+  .exp-tab.active .exp-tab-head .title{color:var(--white);}
+  .exp-tab.active .exp-tab-head .idx{color:var(--gold);}
+  .exp-tab-head .plus{
+    width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,0.2);
+    display:flex;align-items:center;justify-content:center;flex:none;
+    transition:transform .3s ease, background .3s ease, border-color .3s ease;
+  }
+  .exp-tab.active .exp-tab-head .plus{background:var(--gold);border-color:var(--gold);transform:rotate(45deg);}
+  .exp-tab-head .plus svg{width:14px;height:14px;color:var(--white);}
+  .exp-tab.active .exp-tab-head .plus svg{color:var(--ink);}
+  .exp-panel{
+    max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.16,.8,.24,1);
+  }
+  .exp-tab.active .exp-panel{max-height:260px;}
+  .exp-panel-inner{
+    padding:0 40px 36px 170px;display:flex;gap:44px;flex-wrap:wrap;
+  }
+  .exp-panel-inner p{font-size:15px;line-height:1.8;color:#b9b6ad;max-width:460px;}
+  .exp-panel-inner .tags{display:flex;gap:10px;flex-wrap:wrap;align-content:flex-start;max-width:260px;}
+  .exp-panel-inner .tags span{
+    font-size:12.5px;font-weight:600;color:var(--white);
+    border:1px solid rgba(255,255,255,0.18);border-radius:999px;padding:8px 14px;
+  }
+  @media(max-width:700px){
+    .exp-tab-head{padding:22px 22px;gap:14px;}
+    .exp-tab-head .idx{width:auto;font-size:12px;}
+    .exp-panel-inner{padding:0 22px 28px 22px;}
+    .exp-tab.active .exp-panel{max-height:420px;}
+  }
+
+  /* ---------- Services ---------- */
+  .services{background:var(--ink-2);color:var(--white);}
+  .services .center-head h2{color:var(--white);}
+  .services .center-head .fade{color:#6d6a62;}
+  .services .center-head .sub{color:#b9b6ad;}
+  .services-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px;
+  }
+  .svc-card{
+    background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);
+    border-radius:var(--radius-lg);padding:32px 28px;
+    transition:background .3s ease, border-color .3s ease, transform .3s ease;
+  }
+  .svc-card:hover{background:rgba(255,255,255,0.07);border-color:rgba(240,180,41,0.4);transform:translateY(-6px);}
+  .svc-num{font-size:12.5px;font-weight:700;color:var(--gold);letter-spacing:.08em;}
+  .svc-card h3{margin-top:18px;font-size:19px;font-weight:600;}
+  .svc-card p{margin-top:12px;font-size:14px;line-height:1.7;color:#a6a39a;}
+  .svc-card a.svc-link{
+    margin-top:20px;display:inline-flex;align-items:center;gap:7px;
+    font-size:13px;font-weight:600;color:var(--white);border-bottom:1px solid rgba(255,255,255,0.3);padding-bottom:2px;
+  }
+  .svc-card a.svc-link svg{width:10px;height:10px;}
+  @media(max-width:900px){.services-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:600px){.services-grid{grid-template-columns:1fr;}}
+
+  /* ---------- Portfolio / Work ---------- */
+  .work-head{
+    display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;
+  }
+  .work-head h2{font-size:clamp(30px,4.2vw,44px);font-weight:700;max-width:520px;}
+  .work-head h2 .fade{color:var(--gray-light);}
+  .work-head p{max-width:380px;font-size:15px;line-height:1.7;color:var(--gray);}
+  .work-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px;
+  }
+  .work-card{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius-lg);
+    overflow:hidden;transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .work-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-soft);}
+  .work-thumb{
+    height:220px;position:relative;overflow:hidden;
+  }
+  .work-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+  .work-card:hover .work-thumb img{transform:scale(1.06);}
+  .work-tag{
+    position:absolute;top:16px;left:16px;background:var(--white);color:var(--ink);
+    font-size:11.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+    padding:7px 12px;border-radius:999px;
+  }
+  .work-body{padding:24px 26px 28px;}
+  .work-body h3{font-size:18px;font-weight:600;}
+  .work-body .result{
+    margin-top:14px;display:flex;align-items:center;justify-content:space-between;
+    padding-top:14px;border-top:1px solid var(--line);
+  }
+  .work-body .result .metric{font-family:'Poppins',sans-serif;font-weight:700;font-size:20px;color:var(--gold-dark);}
+  .work-body .result .metric-label{font-size:12px;color:var(--gray);margin-top:2px;}
+  .work-body .result a{
+    width:38px;height:38px;border-radius:50%;border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;flex:none;
+    transition:background .25s ease, border-color .25s ease;
+  }
+  .work-body .result a:hover{background:var(--ink);border-color:var(--ink);}
+  .work-body .result a:hover svg{color:var(--white);}
+  .work-body .result a svg{width:13px;height:13px;color:var(--ink);}
+  @media(max-width:900px){.work-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:600px){.work-grid{grid-template-columns:1fr;}}
+
+  /* ---------- Testimonials ---------- */
+  .testi{background:var(--cream-2);}
+  .testi-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;
+  }
+  .testi-card{
+    background:var(--white);border-radius:var(--radius-lg);padding:32px 28px;
+    border:1px solid var(--line);display:flex;flex-direction:column;gap:20px;
+  }
+  .stars{display:flex;gap:4px;color:var(--gold);}
+  .stars svg{width:15px;height:15px;}
+  .testi-card p.quote{font-size:14.5px;line-height:1.75;color:var(--ink);}
+  .testi-person{display:flex;align-items:center;gap:12px;margin-top:auto;}
+  .testi-avatar{
+    width:44px;height:44px;border-radius:50%;flex:none;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Poppins',sans-serif;font-weight:700;color:var(--white);font-size:15px;
+  }
+  .testi-person h5{font-size:14.5px;font-weight:600;}
+  .testi-person span{font-size:12.5px;color:var(--gray);}
+  @media(max-width:900px){.testi-grid{grid-template-columns:1fr;}}
+
+  /* ---------- Blog ---------- */
+  .blog-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;
+  }
+  .blog-card{border-radius:var(--radius-lg);overflow:hidden;background:var(--white);border:1px solid var(--line);transition:transform .3s ease, box-shadow .3s ease;}
+  .blog-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-soft);}
+  .blog-thumb{height:190px;overflow:hidden;}
+  .blog-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+  .blog-card:hover .blog-thumb img{transform:scale(1.06);}
+  .blog-body{padding:24px 24px 28px;}
+  .blog-meta{display:flex;gap:12px;align-items:center;font-size:12px;color:var(--gray);text-transform:uppercase;letter-spacing:.04em;font-weight:600;}
+  .blog-meta .dot{width:4px;height:4px;border-radius:50%;background:var(--gray-light);}
+  .blog-body h3{margin-top:14px;font-size:17.5px;font-weight:600;line-height:1.4;}
+  .blog-body .excerpt{margin-top:10px;font-size:14px;color:var(--gray);line-height:1.7;}
+  .blog-body .readmore{margin-top:18px;display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;}
+  .blog-body .readmore svg{width:10px;height:10px;}
+  @media(max-width:900px){.blog-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:600px){.blog-grid{grid-template-columns:1fr;}}
+
+  /* ---------- CTA / Contact ---------- */
+  .cta-band{
+    background:var(--ink);color:var(--white);border-radius:var(--radius-lg);
+    padding:64px 56px;display:flex;align-items:center;justify-content:space-between;
+    gap:32px;flex-wrap:wrap;
+  }
+  .cta-band h2{font-size:clamp(26px,3.4vw,38px);font-weight:700;max-width:480px;}
+  .cta-band .fade{color:#736f66;}
+  .cta-band .cta-actions{display:flex;gap:14px;flex-wrap:wrap;}
+
+  .contact-section{
+    display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;margin-top:76px;
+  }
+  .contact-info h2{font-size:clamp(28px,3.6vw,38px);font-weight:700;}
+  .contact-info h2 .fade{color:var(--gray-light);display:block;}
+  .contact-info p.sub{margin-top:18px;font-size:15px;line-height:1.75;color:var(--gray);max-width:400px;}
+  .contact-list{margin-top:34px;display:flex;flex-direction:column;gap:22px;}
+  .contact-item{display:flex;align-items:flex-start;gap:16px;}
+  .contact-item .ic{
+    width:44px;height:44px;border-radius:50%;background:var(--cream-2);flex:none;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .contact-item .ic svg{width:18px;height:18px;color:var(--ink);}
+  .contact-item h5{font-size:12.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--gray);font-weight:600;}
+  .contact-item p{font-size:15.5px;font-weight:500;margin-top:4px;}
+  .contact-social{display:flex;gap:10px;margin-top:34px;}
+  .contact-social a{
+    width:42px;height:42px;border-radius:50%;border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;transition:background .25s ease,border-color .25s ease;
+  }
+  .contact-social a:hover{background:var(--ink);border-color:var(--ink);}
+  .contact-social a:hover svg{color:var(--white);}
+  .contact-social a svg{width:16px;height:16px;color:var(--ink);}
+
+  .contact-form{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius-lg);
+    padding:40px;
+  }
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .field{margin-bottom:18px;}
+  .field label{font-size:12.5px;font-weight:600;color:var(--ink);display:block;margin-bottom:8px;}
+  .field input,.field textarea{
+    width:100%;border:1px solid var(--line);border-radius:10px;
+    padding:13px 15px;font-family:inherit;font-size:14.5px;background:var(--cream);
+    transition:border-color .2s ease, box-shadow .2s ease;
+  }
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(240,180,41,0.18);}
+  .field textarea{resize:vertical;min-height:120px;}
+  .form-msg{font-size:13.5px;margin-top:14px;display:none;padding:12px 14px;border-radius:10px;}
+  .form-msg.show{display:block;}
+  .form-msg.ok{background:#e8f5ec;color:#2f8f5b;}
+  @media(max-width:900px){.contact-section{grid-template-columns:1fr;}.cta-band{padding:44px 28px;}}
+  @media(max-width:560px){.form-row{grid-template-columns:1fr;}.contact-form{padding:26px;}}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--ink);color:var(--white);padding-top:80px;}
+  .footer-top{
+    display:grid;grid-template-columns:1.3fr .8fr .8fr .8fr 1.1fr;gap:32px;
+    padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .footer-brand .logo{margin-bottom:16px;}
+  .footer-brand p{font-size:14px;line-height:1.75;color:#a6a39a;max-width:280px;}
+  .footer-social{display:flex;gap:10px;margin-top:22px;}
+  .footer-social a{
+    width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,0.16);
+    display:flex;align-items:center;justify-content:center;transition:background .25s ease;
+  }
+  .footer-social a:hover{background:var(--gold);border-color:var(--gold);}
+  .footer-social a:hover svg{color:var(--ink);}
+  .footer-social a svg{width:15px;height:15px;color:var(--white);}
+  .footer-col h5{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:#8f8c84;margin-bottom:20px;}
+  .footer-col ul{display:flex;flex-direction:column;gap:13px;}
+  .footer-col a{font-size:14.5px;color:#cfccc4;transition:color .2s ease;}
+  .footer-col a:hover{color:var(--gold);}
+  .footer-news p{font-size:14px;color:#a6a39a;line-height:1.7;margin-bottom:16px;}
+  .news-form{display:flex;gap:8px;}
+  .news-form input{
+    flex:1;min-width:0;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);
+    border-radius:999px;padding:12px 16px;color:var(--white);font-size:13.5px;font-family:inherit;
+  }
+  .news-form input::placeholder{color:#84817a;}
+  .news-form input:focus{outline:none;border-color:var(--gold);}
+  .news-form button{
+    width:44px;height:44px;flex:none;border-radius:50%;background:var(--gold);border:none;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .news-form button svg{width:15px;height:15px;color:var(--ink);}
+  .footer-bottom{
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
+    padding:26px 0;font-size:13px;color:#8f8c84;
+  }
+  .footer-bottom .legal-links{display:flex;gap:22px;}
+  .footer-bottom a:hover{color:var(--white);}
+
+  @media(max-width:980px){
+    .footer-top{grid-template-columns:1fr 1fr;}
+    .footer-brand{grid-column:1/-1;}
+  }
+  @media(max-width:560px){
+    .footer-top{grid-template-columns:1fr;}
+  }
+
+  /* ---------- Back to top ---------- */
+  .to-top{
+    position:fixed;right:24px;bottom:24px;z-index:150;
+    width:48px;height:48px;border-radius:50%;background:var(--ink);color:var(--white);
+    border:none;display:flex;align-items:center;justify-content:center;
+    opacity:0;pointer-events:none;transform:translateY(10px);
+    transition:opacity .3s ease, transform .3s ease, background .3s ease;
+    box-shadow:0 12px 24px -10px rgba(0,0,0,0.4);
+  }
+  .to-top.show{opacity:1;pointer-events:auto;transform:translateY(0);}
+  .to-top:hover{background:var(--gold-dark);}
+  .to-top svg{width:16px;height:16px;}
+</style>
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+  <div class="wrap">
+    <a href="#top" class="logo">aelixa</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#top">Home</a>
+      <a href="#about">About</a>
+      <a href="#work" class="has-caret">Pages
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg>
+      </a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <a href="#" class="cart-icon" aria-label="Cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3h2l2.6 12.4a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.6L22 8H6"/><circle cx="9" cy="21" r="1.4"/><circle cx="18" cy="21" r="1.4"/></svg>
+        <span>(0)</span>
+      </a>
+      <a href="#contact" class="btn btn-gold btn-gold-label">Book A Call
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap hero-center">
+    <span class="eyebrow reveal in">
+      <span class="arrow-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M7 7l10 10M17 7v10H7"/></svg></span>
+      Welcome to Aelixa
+    </span>
+    <h1 class="reveal in reveal-delay-1">
+      Your Next Best<br>
+      Marketing
+      <span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M7 7l10 10M17 7v10H7"/></svg></span>
+      Decision<br>
+      <span class="fade">Starts Here</span>
+    </h1>
+    <p class="hero-sub reveal in reveal-delay-2">
+      I'm a digital marketer helping businesses grow through SEO, paid campaigns, and content strategy. Browse my work — the numbers do the talking.
+    </p>
+    <div class="hero-cta reveal in reveal-delay-3">
+      <a href="#contact" class="btn btn-dark">Book A Call
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+      </a>
+      <a href="#work" class="btn btn-outline-light">See My Work
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- ---- About / Strategy split ---- -->
+  <div class="wrap" id="about">
+    <div class="about-split">
+      <div class="about-card reveal">
+        <span class="eyebrow on-dark">
+          <span class="arrow-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M7 7l10 10M17 7v10H7"/></svg></span>
+          About the strategist
+        </span>
+        <h2>Strategy first.<span class="fade">Always.</span></h2>
+        <p class="desc">
+          I lead marketing projects from clear brand strategy to precise execution, combining data-driven thinking with sharp creative judgment to build systems that stay coherent, durable, and easy to scale.
+        </p>
+        <div class="card-btns">
+          <a href="#contact" class="btn btn-gold">More About Me
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+          </a>
+          <a href="#services" class="btn btn-outline-dark">See Services
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+          </a>
+        </div>
+
+        <div class="mini-result">
+          <div class="thumb"></div>
+          <div class="body">
+            <h4>Increasing Brand Engagement<br>from 10K to 50K</h4>
+            <a href="#work">See Details
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="photo-card reveal reveal-delay-1">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=900&auto=format&fit=crop" alt="Portrait of the strategist behind Aelixa">
+        <div class="stat-row">
+          <div class="stat-chip">
+            <div class="num">3.8<span class="unit">x</span></div>
+            <div class="cap">Across all paid ad campaigns</div>
+            <div class="delta">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+              64% above industry avg
+            </div>
+          </div>
+          <div class="stat-chip">
+            <div class="num">+240<span class="unit">%</span></div>
+            <div class="cap">Via SEO · average 8 months</div>
+            <div class="delta">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+              Compounding, not paid
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CLIENT LOGOS ================= -->
+<section class="clients">
+  <div class="wrap">
+    <div class="client-row">
+      <div class="client-logo">
+        <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+        CozyNest
+      </div>
+      <div class="client-logo">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l8 4.5v11L12 22l-8-4.5v-11L12 2z"/></svg>
+        LuxeAura
+      </div>
+      <div class="client-logo">
+        <svg viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><rect x="13" y="13" width="7" height="7"/></svg>
+        ZestyBite
+      </div>
+      <div class="client-logo">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1.5 3 1.5 5-.5 7s-4 1-5.5-1.5S6.5 3 9.5 2 12 2 12 2zM12 22c-1.5-3-1.5-5 .5-7s4-1 5.5 1.5-.5 4.5-3.5 5.5-2.5 0-2.5 0z"/></svg>
+        DigiMinds
+      </div>
+      <div class="client-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zM2 12h20M12 2a15 15 0 010 20 15 15 0 010-20z"/></svg>
+        EmberCo
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PHILOSOPHY ================= -->
+<section class="section-pad">
+  <div class="wrap">
+    <div class="center-head reveal">
+      <span class="eyebrow">
+        <span class="arrow-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M7 7l10 10M17 7v10H7"/></svg></span>
+        My Philosophy
+      </span>
+      <h2>Strategist-Led<span class="fade" style="display:block;">Built On Data</span></h2>
+      <p class="sub">I don't just create visuals; I build systems backed by rigorous analysis to ensure your business goals are met with precision.</p>
+    </div>
+
+    <div class="phil-grid">
+      <div class="phil-card reveal">
+        <div class="phil-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="10" cy="10" r="6.5"/><path d="M20 20l-5.5-5.5"/><path d="M10 7v6M7 10h6"/></svg>
+        </div>
+        <h3>Digital Audits</h3>
+        <p>Identify gaps and opportunities in your current framework to optimize performance and growth.</p>
+      </div>
+      <div class="phil-card reveal reveal-delay-1">
+        <div class="phil-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="7" r="2.2"/><circle cx="18" cy="7" r="2.2"/><circle cx="12" cy="17" r="2.2"/><path d="M8 8.3L12 15M16 8.3L12 15M8 7h8"/></svg>
+        </div>
+        <h3>Growth Systems</h3>
+        <p>Build scalable marketing funnels and automated systems that convert visitors into loyal clients.</p>
+      </div>
+      <div class="phil-card reveal reveal-delay-2">
+        <div class="phil-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19h16"/><rect x="6" y="11" width="3" height="6"/><rect x="10.5" y="7" width="3" height="10"/><rect x="15" y="13" width="3" height="4"/></svg>
+        </div>
+        <h3>Data-Driven ROI</h3>
+        <p>Transform complex analytics into actionable insights for smarter, faster decision-making.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERTISE ================= -->
+<section class="section-pad" style="padding-top:0;">
+  <div class="wrap">
+    <div class="expertise-top">
+      <div class="reveal">
+        <span class="eyebrow">
+          <span class="arrow-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M7 7l10 10M17 7v10H7"/></svg></span>
+          Expertise
+        </span>
+        <h2 style="margin-top:18px;">Growth-Focused<span class="fade">Digital Solutions</span></h2>
+      </div>
+      <p class="para reveal reveal-delay-1">From performance-focused design to technical implementation, I provide the tools you need to dominate your niche.</p>
+    </div>
+
+    <div class="exp-tabs reveal">
+      <div class="exp-tab active" data-tab="1">
+        <button class="exp-tab-head">
+          <span class="idx">01 — SEO</span>
+          <span class="title">Search Engine Optimization</span>
+          <span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="exp-panel">
+          <div class="exp-panel-inner">
+            <p>Technical audits, on-page optimization, and content architecture that lift organic rankings and compound traffic over time — without paying for every click.</p>
+            <div class="tags"><span>Technical SEO</span><span>Keyword Strategy</span><span>Link Building</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="exp-tab" data-tab="2">
+        <button class="exp-tab-head">
+          <span class="idx">02 — Performance</span>
+          <span class="title">Paid Performance Campaigns</span>
+          <span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="exp-panel">
+          <div class="exp-panel-inner">
+            <p>Full-funnel paid media across search and social, built on tight audience targeting and continuous creative testing to keep cost-per-acquisition falling.</p>
+            <div class="tags"><span>Paid Search</span><span>Meta Ads</span><span>Conversion Tracking</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="exp-tab" data-tab="3">
+        <button class="exp-tab-head">
+          <span class="idx">03 — Social Media</span>
+          <span class="title">Social Media Growth</span>
+          <span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="exp-panel">
+          <div class="exp-panel-inner">
+            <p>Editorial calendars and community strategy built around what your audience actually engages with, turning followers into a genuine, repeatable pipeline.</p>
+            <div class="tags"><span>Content Calendars</span><span>Community</span><span>Analytics</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="section-pad services" id="services">
+  <div class="wrap">
+    <div class="center-head reveal">
+      <span class="eyebrow on-dark">
+        <span class="arrow-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M7 7l10 10M17 7v10H7"/></svg></span>
+        Services
+      </span>
+      <h2>What I Can<span class="fade">Do For You</span></h2>
+      <p class="sub">A focused set of services, chosen because each one moves a measurable number — traffic, leads, or revenue.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="svc-card reveal">
+        <span class="svc-num">01</span>
+        <h3>SEO Optimization</h3>
+        <p>Technical fixes, content structure, and authority building that raise organic visibility for the long run.</p>
+        <a class="svc-link" href="#contact">Learn More
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+        </a>
+      </div>
+      <div class="svc-card reveal reveal-delay-1">
+        <span class="svc-num">02</span>
+        <h3>Paid Ad Campaigns</h3>
+        <p>Search and social campaigns engineered around a target CPA, with weekly optimization built in.</p>
+        <a class="svc-link" href="#contact">Learn More
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+        </a>
+      </div>
+      <div class="svc-card reveal reveal-delay-2">
+        <span class="svc-num">03</span>
+        <h3>Content Strategy</h3>
+        <p>Editorial systems that connect brand voice to search demand, so every piece has a job to do.</p>
+        <a class="svc-link" href="#contact">Learn More
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+        </a>
+      </div>
+      <div class="svc-card reveal">
+        <span class="svc-num">04</span>
+        <h3>Analytics & Reporting</h3>
+        <p>Clear dashboards and monthly reporting that tie every channel back to pipeline and revenue.</p>
+        <a class="svc-link" href="#contact">Learn More
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+        </a>
+      </div>
+      <div class="svc-card reveal reveal-delay-1">
+        <span class="svc-num">05</span>
+        <h3>Social Media Growth</h3>
+        <p>Community-first strategy that builds an owned audience instead of renting attention.</p>
+        <a class="svc-link" href="#contact">Learn More
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+        </a>
+      </div>
+      <div class="svc-card reveal reveal-delay-2">
+        <span class="svc-num">06</span>
+        <h3>Email & CRM</h3>
+        <p>Lifecycle flows and segmentation that turn a list into a dependable, repeatable revenue channel.</p>
+        <a class="svc-link" href="#contact">Learn More
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PORTFOLIO / WORK ================= -->
+<section class="section-pad" id="work">
+  <div class="wrap">
+    <div class="work-head reveal">
+      <h2>Selected<span class="fade" style="display:block;">Case Studies</span></h2>
+      <p>A few recent engagements where strategy turned into a measurable, reportable result.</p>
+    </div>
+
+    <div class="work-grid">
+      <div class="work-card reveal">
+        <div class="work-thumb">
+          <span class="work-tag">SEO</span>
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="CozyNest organic growth case study">
+        </div>
+        <div class="work-body">
+          <h3>CozyNest — Organic Rebuild</h3>
+          <div class="result">
+            <div>
+              <div class="metric">+240%</div>
+              <div class="metric-label">Organic traffic, 8 months</div>
+            </div>
+            <a href="#contact" aria-label="View case study"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-card reveal reveal-delay-1">
+        <div class="work-thumb">
+          <span class="work-tag">Paid Media</span>
+          <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=800&auto=format&fit=crop" alt="LuxeAura paid campaign case study">
+        </div>
+        <div class="work-body">
+          <h3>LuxeAura — Performance Scale-Up</h3>
+          <div class="result">
+            <div>
+              <div class="metric">3.8x</div>
+              <div class="metric-label">Return on ad spend</div>
+            </div>
+            <a href="#contact" aria-label="View case study"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-card reveal reveal-delay-2">
+        <div class="work-thumb">
+          <span class="work-tag">Social</span>
+          <img src="https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?q=80&w=800&auto=format&fit=crop" alt="ZestyBite social engagement case study">
+        </div>
+        <div class="work-body">
+          <h3>ZestyBite — Community Growth</h3>
+          <div class="result">
+            <div>
+              <div class="metric">10K→50K</div>
+              <div class="metric-label">Engaged followers</div>
+            </div>
+            <a href="#contact" aria-label="View case study"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section class="section-pad testi">
+  <div class="wrap">
+    <div class="center-head reveal">
+      <span class="eyebrow">
+        <span class="arrow-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M7 7l10 10M17 7v10H7"/></svg></span>
+        Testimonials
+      </span>
+      <h2>Clients On<span class="fade">Working Together</span></h2>
+    </div>
+
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15,9 22,9 16.5,13.5 18.5,21 12,17 5.5,21 7.5,13.5 2,9 9,9"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15,9 22,9 16.5,13.5 18.5,21 12,17 5.5,21 7.5,13.5 2,9 9,9"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15,9 22,9 16.5,13.5 18.5,21 12,17 5.5,21 7.5,13.5 2,9 9,9"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15,9 22,9 16.5,13.5 18.5,21 12,17 5.5,21 7.5,13.5 2,9 9,9"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15,9 22,9 16.5,13.5 18.5,21 12,17 5.5,21 7.5,13.5 2,9 9,9"/></svg>
+        </div>
+        <p class="quote">Our organic traffic more than tripled in under a year, and the reporting made it easy to see exactly why. A rare mix of strategy and follow-through.</p>
+        <div class="testi-person">
+          <div class="testi-avatar" style="background:#e29b3f;">R</div>
+          <div>
+            <h5>Rina Alvarez</h5>
+            <span>Founder, CozyNest</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal reveal-delay-1">
+        <div class="stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15,9 22,9 16.5,13.5 18.5,21 12,17 5.5,21 7.5,13.5 2,9 9,9"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15,9 22,9 16.5,13.5 18.5,21 12,17 5.5,21 7.5,13.5 2,9 9,9"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15,9 22,9 16.5,13.5 18.5,21 12,17 5.5,21 7.5,13.5 2,9 9,9"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15,9 22,9 16.5,13.5 18.5,21 12,17 5.5,21 7.5,13.5 2,9 9,9"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15,9 22,9 16.5,13.5 18.5,21 12,17 5.5,21 7.5,13.5 2,9 9,9"/></svg>
+        </div>
+        <p class="quote">Paid spend finally felt predictable. We went from guessing to knowing our return on every channel within the first quarter.</p>
+        <div class="testi-person">
+          <div class="testi-avatar" style="background:#5b7c99;">D</div>
+          <div>
+            <h5>Daniel Cho</h5>
+            <span>Marketing Lead, LuxeAura</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal reveal-delay-2">
+        <div class="stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15,9 22,9 16.5,13.5 18.5,21 12,17 5.5,21 7.5,13.5 2,9 9,9"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15,9 22,9 16.5,13.5 18.5,21 12,17 5.5,21 7.5,13.5 2,9 9,9"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15,9 22,9 16.5,13.5 18.5,21 12,17 5.5,21 7.5,13.5 2,9 9,9"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15,9 22,9 16.5,13.5 18.5,21 12,17 5.5,21 7.5,13.5 2,9 9,9"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15,9 22,9 16.5,13.5 18.5,21 12,17 5.5,21 7.5,13.5 2,9 9,9"/></svg>
+        </div>
+        <p class="quote">Our community went from quiet to genuinely active. The content calendar alone changed how our whole team thinks about social.</p>
+        <div class="testi-person">
+          <div class="testi-avatar" style="background:#8a6fae;">M</div>
+          <div>
+            <h5>Maya Torres</h5>
+            <span>Brand Manager, ZestyBite</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BLOG ================= -->
+<section class="section-pad" id="blog">
+  <div class="wrap">
+    <div class="work-head reveal">
+      <h2>Latest<span class="fade" style="display:block;">Insights</span></h2>
+      <p>Notes on SEO, paid media, and the systems behind sustainable growth.</p>
+    </div>
+
+    <div class="blog-grid">
+      <a href="#" class="blog-card reveal">
+        <div class="blog-thumb">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" alt="Article on SEO fundamentals">
+        </div>
+        <div class="blog-body">
+          <div class="blog-meta">SEO <span class="dot"></span> 6 min read</div>
+          <h3>Five Technical SEO Fixes That Actually Move Rankings</h3>
+          <p class="excerpt">The audits that pay off aren't glamorous — here's what to check first.</p>
+          <span class="readmore">Read More
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+          </span>
+        </div>
+      </a>
+      <a href="#" class="blog-card reveal reveal-delay-1">
+        <div class="blog-thumb">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="Article on paid media budgeting">
+        </div>
+        <div class="blog-body">
+          <div class="blog-meta">Paid Media <span class="dot"></span> 4 min read</div>
+          <h3>How to Budget a Paid Campaign You Can Actually Trust</h3>
+          <p class="excerpt">A simple framework for setting spend against real target CPA.</p>
+          <span class="readmore">Read More
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+          </span>
+        </div>
+      </a>
+      <a href="#" class="blog-card reveal reveal-delay-2">
+        <div class="blog-thumb">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop" alt="Article on content strategy">
+        </div>
+        <div class="blog-body">
+          <div class="blog-meta">Strategy <span class="dot"></span> 5 min read</div>
+          <h3>Building a Content Calendar That Survives Contact With Reality</h3>
+          <p class="excerpt">Why most editorial calendars fail — and what to do instead.</p>
+          <span class="readmore">Read More
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA BAND ================= -->
+<section class="section-pad" style="padding-top:0;">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <h2>Let's Build Your<span class="fade" style="display:block;">Growth Story</span></h2>
+      <div class="cta-actions">
+        <a href="#contact" class="btn btn-gold">Book A Call
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+        </a>
+        <a href="#work" class="btn btn-outline-dark">View Case Studies
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="section-pad" id="contact" style="padding-top:0;">
+  <div class="wrap">
+    <div class="contact-section">
+      <div class="contact-info reveal">
+        <span class="eyebrow">
+          <span class="arrow-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M7 7l10 10M17 7v10H7"/></svg></span>
+          Get In Touch
+        </span>
+        <h2 style="margin-top:18px;">Let's Talk About<span class="fade">Your Growth</span></h2>
+        <p class="sub">Tell me a little about your business and where you'd like it to be. I reply within one business day.</p>
+
+        <div class="contact-list">
+          <div class="contact-item">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+            <div>
+              <h5>Email</h5>
+              <p>hello@aelixa.co</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg></div>
+            <div>
+              <h5>Phone</h5>
+              <p>+1 (555) 019-2044</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div>
+              <h5>Location</h5>
+              <p>Remote — working with clients worldwide</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-social">
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v7M7 7v.01M12 17v-4.5a2.5 2.5 0 0 1 5 0V17M12 17v-7"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="#" aria-label="X / Twitter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4l16 16M20 4L4 20"/></svg></a>
+        </div>
+      </div>
+
+      <form class="contact-form reveal reveal-delay-1" id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="field">
+            <label for="fname">Full Name</label>
+            <input type="text" id="fname" name="fname" placeholder="Jordan Lee" required>
+          </div>
+          <div class="field">
+            <label for="femail">Email Address</label>
+            <input type="email" id="femail" name="femail" placeholder="jordan@company.com" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="fsubject">Subject</label>
+          <input type="text" id="fsubject" name="fsubject" placeholder="Let's talk about SEO">
+        </div>
+        <div class="field">
+          <label for="fmessage">Message</label>
+          <textarea id="fmessage" name="fmessage" placeholder="Tell me about your business and goals..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-dark btn-block">Send Message
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+        </button>
+        <div class="form-msg ok" id="formMsg">Thanks — your message has been noted. I'll be in touch within one business day.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">aelixa</div>
+        <p>Digital marketing strategy for brands that want their growth to show up in the numbers, not just the moodboard.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v7M7 7v.01M12 17v-4.5a2.5 2.5 0 0 1 5 0V17M12 17v-7"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="#" aria-label="X / Twitter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4l16 16M20 4L4 20"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#work">Case Studies</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Pages</h5>
+        <ul>
+          <li><a href="#top">Home</a></li>
+          <li><a href="#work">Portfolio</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Book A Call</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <ul>
+          <li><a href="#blog">Insights</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-news">
+        <h5>Stay Updated</h5>
+        <p>One short email a month on what's working in SEO and paid media.</p>
+        <form class="news-form" id="newsForm">
+          <input type="email" placeholder="Your email" required aria-label="Email for newsletter">
+          <button type="submit" aria-label="Subscribe">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M7 17L17 7M17 7H9M17 7v8"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Aelixa. All rights reserved.</span>
+      <div class="legal-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+
+  // Expertise accordion tabs
+  document.querySelectorAll('.exp-tab-head').forEach(head => {
+    head.addEventListener('click', () => {
+      const tab = head.closest('.exp-tab');
+      const wasActive = tab.classList.contains('active');
+      document.querySelectorAll('.exp-tab').forEach(t => t.classList.remove('active'));
+      if (!wasActive) tab.classList.add('active');
+    });
+  });
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+
+  // Back to top button
+  const toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', () => {
+    toTop.classList.toggle('show', window.scrollY > 480);
+  });
+  toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // Contact form (client-side only — no backend wired up)
+  const contactForm = document.getElementById('contactForm');
+  const formMsg = document.getElementById('formMsg');
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!contactForm.checkValidity()) {
+      contactForm.reportValidity();
+      return;
+    }
+    formMsg.classList.add('show');
+    contactForm.reset();
+    setTimeout(() => formMsg.classList.remove('show'), 6000);
+  });
+
+  // Newsletter form
+  const newsForm = document.getElementById('newsForm');
+  newsForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const input = newsForm.querySelector('input');
+    input.value = '';
+    input.placeholder = 'Subscribed — thank you!';
+  });
+
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
